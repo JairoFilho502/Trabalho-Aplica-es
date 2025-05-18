@@ -6,9 +6,8 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/cadastro.css">
-
 </head>
-<body>
+<body style="margin: 0; display: flex; flex-direction: column; min-height: 100vh;">
     <header class="header">
         <nav>
             <a href="index.html">Home</a>
@@ -20,31 +19,32 @@
             </div>
         </nav>
     </header>
+
     <section>
-        <img src="https://c1.wallpaperflare.com/preview/231/225/87/america-classic-car-car-vintage.jpg" alt="cadastro-background">
+        <img src="https://c1.wallpaperflare.com/preview/231/225/87/america-classic-car-car-vintage.jpg" alt="cadastro-background" style="width: 100%;">
     </section>
-    <section>
+
+    <section style="flex: 1; margin-left: 5%;">
         <h1>Cadastrar</h1>
         <form method="post" action="index.html">
             <label for="name">Nome</label><br>
-            <input type="text" name="Nome" required placeholder="Nome Sobrenome">
+            <input type="text" name="Nome" required placeholder="Nome Sobrenome"><br>
             <label for="email">Email</label><br>
-            <input type="email" name="Email" required placeholder="nome@email.com">
+            <input type="email" name="Email" required placeholder="nome@email.com"><br>
             <label for="password">Senha</label><br>
-            <input type="password" name="Senha" required placeholder="******">
-            <label for="confirmPswd">Confirme a Senha</label><br
-            <input type="pswd" name="Confirmpswd" required placeholder="******">
-            <label for="check" >Aceito os termos</label><br>
-            <input type="checkbox" name="checkbox" required checked>
+            <input type="password" name="Senha" required placeholder="******"><br>
+            <label for="confirmPswd">Confirme a Senha</label><br>
+            <input type="password" name="Confirmpswd" required placeholder="******"><br>
+            <label for="check">Aceito os termos</label><br>
+            <input type="checkbox" name="checkbox" required checked><br>
         </form>
-        <div>
-            <a href="index.html">Voltar</a>
-            <a href="login.html">Cadastrar</a>
+        <div style="margin-top: 1em;">
+            <a href="index.html" style="display: inline-block; text-decoration: none; background-color: #007bff; color: white; padding: 10px 20px; border-radius: 5px; margin-right: 10px; font-family: sans-serif;">Voltar</a>
+            <a href="login.html" style="display: inline-block; text-decoration: none; background-color: #28a745; color: white; padding: 10px 20px; border-radius: 5px; font-family: sans-serif;">Cadastrar</a>
         </div>
-            
     </section>
 
-    <footer>
+    <footer style="width: 100%; background-color: #f0f0f0; text-align: center; padding: 1em 0;">
         <p>&COPY; FrontEnd - 2025</p>
         <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm">LGPD</a>
     </footer>
