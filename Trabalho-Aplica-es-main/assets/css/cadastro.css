@@ -1,0 +1,124 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Faz o main ocupar o espaço restante entre nav e footer */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Começa no topo para dar espaço pro nav */
+  padding: 2rem;
+  background-image: url('https://th.bing.com/th/id/OIP.RISeNw9IvQOLp_i1ukb8_gHaEK?rs=1&pid=ImgDetMain');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#cadastroContainer {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 90%;
+  max-width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 60px; /* Espaço entre nav e form */
+}
+
+#cadastroContainer h1 {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 1.8em;
+  text-align: center;
+  text-shadow: 1px 1px 2px #000;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+form label {
+  font-size: 0.9em;
+  color: #f1f1f1;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  background: rgba(255, 255, 255, .8);
+  color: #000;
+  transition: box-shadow 0.3s;
+}
+
+form input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.4);
+}
+
+.bt_cadastrar {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  background-color: #ffa500;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.bt_cadastrar:hover {
+  background-color: #cc8400;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: normal;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.cadastro_links {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.cadastro_links a {
+  font-size: 0.9em;
+  color: #ffffff;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px black;
+  transition: color 0.3s;
+}
+
+.cadastro_links a:hover {
+  color: #ffc107;
+  text-decoration: underline;
+}
