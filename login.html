@@ -22,28 +22,34 @@
     </div>
   </nav>
 </header>
-
-    <section id="loginContainer">
-        <h1>Login</h1>
-        <form action="" method="post">
-            <label for="Nome">Nome</label><br>
-            <input type="text" name="Nome" placeholder="Jão Vitu">
-            <label for="password">Senha</label>
-            <input type="password" name="Senha" placeholder="******">
-
-            <button type="submit">Entrar</button>
-        </form>
-        
-        <a href="#">Esqueci a senha</a>
-
-        <a href="cadastro.html">Cadastrar</a>
-
-    </section>
-    <footer>
-        <p>&COPY; FrontEnd - 2025</p>
+  <main class="login_page">
+  <section id="loginContainer">
+    <h1>Login</h1>
+    <form action="index.html" method="post">
+      <div class="sub_form">
+        <label for="Nome">Nome</label><br>
+        <input type="text" name="Nome" required placeholder="Jão Vitu">
+      </div>
+      <div class="sub_form">
+        <label for="password">Senha</label>
+        <input type="password" name="Senha" required placeholder="******">
+      </div>
+      
+      <button type="submit" class="bt_entrar">Entrar</button>
+    </form>
+    
+    <div class="login_links">
+      <a href="#">Esqueci a senha</a>
+      <a href="cadastro.html">Cadastrar</a>
+    </div>
+    
+  </section>
+</main>
+  <footer>
+    <p>&COPY; FrontEnd - 2025</p>
         <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm">LGPD</a>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
 </html>
 
