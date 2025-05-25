@@ -1,0 +1,67 @@
+/* CSS para estilizar a pagina contato */
+ main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    text-align: center;
+ }
+ @media screen and (max-width: 1220px){
+    main{
+        width: 80%;
+    }
+}
+
+    .sobre h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .sobre p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .conteiner-links {
+      margin-top: 3rem;
+    }
+
+    .conteiner-links h3 {
+      margin-bottom: 2rem;
+      font-size: 1.5rem;
+    }
+
+    .link-btn {
+      background-color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: transform 0.2s ease;
+    }
+
+    .link-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .link-img img {
+      height: 60px;
+    }
+
+    @media (max-width: 576px) {
+      .link-btn {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .link-img img {
+        margin-top: 1rem;
+      }
+    }
