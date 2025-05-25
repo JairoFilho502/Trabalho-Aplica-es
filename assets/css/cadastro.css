@@ -67,3 +67,15 @@ form input{
     background-color: #0056b3;
 }
 
+.termos-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f1f1f1;
+  font-weight: bold;
+}
+
+.termos-container input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
