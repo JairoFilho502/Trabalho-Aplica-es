@@ -72,19 +72,96 @@
 footer {
   margin-top: auto;
   background-color: #1e1e1e;
-  padding: 2rem 1rem;
   color: #fff;
+  flex-wrap: wrap; 
+}
+
+.footer-top{
+  padding: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px; 
-  flex-wrap: wrap; 
-  margin-top: 4rem;
-  margin-top: auto; 
+  gap: 10rem;
+  border: 3px solid orangered;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  border: 3px solid greenyellow;
+}
+
+footer img{
+  height: 130px;
+  border: 3px solid yellow;
+  float: left;
+}
+
+footer h1 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.botoes-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+    flex-direction: column;
+
+}
+
+footer .degrade {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+footer .degrade:hover {
+  background: linear-gradient(to right, #ff4b2b, #ff416c);
+}
+
+footer .btn-footer {
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  color: #a2d2ff;
+}
+
+footer a {
+  text-decoration: none;
 }
 
 footer p,
 footer a {
+  margin-top: 0.5rem;
+}
+
+.icones {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+  
+.footer_bottom{
+  border-top: 1px solid #444;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer_bottom p,
+.footer_bottom a {
   margin: 0;
   padding: 0;
   display: flex;
@@ -93,12 +170,12 @@ footer a {
   line-height: 1;
 }
 
-footer a {
+.footer_bottom a {
   color: #a2d2ff;
   text-decoration: none;
 }
 
-footer a:hover {
+.footer_bottom a:hover {
   text-decoration: underline;
 }
 
