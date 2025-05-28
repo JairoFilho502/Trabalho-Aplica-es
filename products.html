@@ -1,194 +1,603 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image" href="assets/images/logo.jpeg" />
-    <title>Produtos</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="stylesheet" href="assets/css/products.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"/>
-  </head>
-  <body>
-    <header class="header">
-      <nav>
-        <a href="index.html" class="logo">
-          <img src="assets/images/logo_nome.png" alt="Logo BarbaCar" />
-        </a>
-        <div class="menu">
-          <a href="products.html">Veículos</a>
-          <a href="login.html">Login</a>
-          <a href="cadastro.html">Cadastrar</a>
-        </div>
-      </nav>
-    </header>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image" href="assets/images/logo.jpeg">
+  <title>Produtos - BarbaCar</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/products.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <style>
+body {
+      background-image: url('https://images.unsplash.com/photo-1614984580975-311f52deceb4?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .logo img {
+      height: 50px;
+    }
+    
+    .menu a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      position: relative;
+    }
+    
+    .menu a:hover {
+      color: #ffd700;
+    }
+    
+    .menu a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #ffd700;
+      transition: width 0.3s ease;
+    }
+    
+    .menu a:hover::after {
+      width: 100%;
+    }
+    
+    .card-container {
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .card {
+      height: 100%;
+      transition: transform 0.3s ease, z-index 0.3s;
+      border-radius: 15px;
+      overflow: visible;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      border: none;
+      position: relative;
+      background: rgba(255, 255, 255, 0.95);
+    }
+    
+    .card-container:hover {
+      z-index: 100;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+    
+    .card-img-container {
+      height: 200px;
+      overflow: visible;
+      position: relative;
+      z-index: 10;
+      border-radius: 15px 15px 0 0;
+    }
+    
+    .card-img-top {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border-radius: 15px 15px 0 0;
+    }
+    
+    .card-container:hover .card-img-top {
+      transform: scale(1.5); /
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      z-index: 200;
+      position: relative;
+    }
+    
+    .card-body {
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      background: #fff;
+      border-radius: 0 0 15px 15px;
+      position: relative;
+      z-index: 20;
+    }
+    
+    .card-title {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1a2a6c;
+      font-size: 1.2rem;
+    }
+    
+    .card-text {
+      flex-grow: 1;
+      margin-bottom: 1rem;
+      color: #555;
+      font-size: 0.95rem;
+    }
+    
+    .price {
+      font-weight: bold;
+      color: #b21f1f;
+      font-size: 1.25rem;
+      margin-bottom: 15px;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+      border: none;
+      border-radius: 30px;
+      padding: 10px 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      align-self: flex-start;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(178, 31, 31, 0.3);
+    }
+    
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #0d1b4d, #8c1919);
+      transform: translateY(-3px);
+      box-shadow: 0 7px 15px rgba(178, 31, 31, 0.4);
+    }
+    
+    .page-header {
+      text-align: center;
+      padding: 40px 0 20px;
+      position: relative;
+    }
+    
+    .page-title {
+      font-size: 3rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    
+    .page-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    footer {
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 50px 0 20px;
+      margin-top: 60px;
+      backdrop-filter: blur(5px);
+      border-top: 2px solid #b21f1f;
+    }
+    
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px 30px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .footer-content {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    
+    .footer_bottom {
+      text-align: center;
+      padding-top: 30px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .footer_bottom a {
+      color: #4dabf7;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .footer_bottom a:hover {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+    
+    .degrade {
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+    
+    .degrade:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 15px rgba(0,0,0,0.3);
+    }
+    
+    .btn-footer {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      transition: all 0.3s;
+    }
+    
+    .btn-footer:hover {
+      transform: scale(1.1);
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #1a2a6c, #b21f1f, #1a2a6c);
+      z-index: -1;
+      border-radius: 17px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    .card:hover::before {
+      opacity: 1;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 992px) {
+      .row-cols-xl-5 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .row-cols-md-3 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .footer-top {
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+      }
+      
+      .footer-content {
+        justify-content: center;
+      }
+      
+      .page-title {
+        font-size: 2.2rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .row-cols-1 {
+        grid-template-columns: 1fr;
+      }
+      
+      .menu a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="container d-flex justify-content-between align-items-center">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo_nome.png" alt="Logo BarbaCar">
+      </a>
+      <div class="menu">
+        <a href="products.html">Veículos</a>
+        <a href="login.html">Login</a>
+        <a href="cadastro.html">Cadastrar</a>
+      </div>
+    </nav>
+  </header>
 
-    <main>
-      <div class="container text-center">
-        <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
-          <div class="col">
-            <div class="p-3">
-              <div class="card">
+  <main class="py-4">
+    <div class="container">
+      <div class="page-header">
+        <h1 class="page-title">Catálogo</h1>
+        <p class="page-subtitle">Seu próximo carro a um clique de distância!</p>
+      </div>
+      
+      <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
+        <!-- Carro 1 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
                 <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202505/20250513/toyota-hilux-sw4-2-8-d4d-turbo-diesel-srx-7l-4x4-automatico-wmimagem18384944732.webp?s=fill&w=1920&h=1440&q=75" class="card-img-top" alt="Toyota Hilux SW4">
-                <div class="card-body">
-                  <h5 class="card-title">Toyota Hilux SW4 2022 R$327.900</h5>
-                  <p class="card-text">2.8 D-4D TURBO DIESEL DIAMOND 7L 4X4 AUTOMÁTICO</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Toyota Hilux SW4 2022</h5>
+                <p class="card-text">2.8 D-4D TURBO DIESEL DIAMOND 7L 4X4 AUTOMÁTICO</p>
+                <div class="mt-auto">
+                  <p class="price">R$327.900</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="p-3">
-              <div class="card">
+        </div>
+        
+        <!-- Carro 2 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
                 <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2024/202408/20240830/honda-civic-2.0-lxr-16v-flex-4p-automatico-wmimagem11500958294.jpg?s=fill&w=1920&h=1440&q=75" class="card-img-top" alt="Honda Civic">
-                <div class="card-body">
-                  <h5 class="card-title">Honda Civic 2014 R$73.000</h5>
-                  <p class="card-text">2.0 LXR 16V FLEX 4P AUTOMÁTICO</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Honda Civic 2014</h5>
+                <p class="card-text">2.0 LXR 16V FLEX 4P AUTOMÁTICO</p>
+                <div class="mt-auto">
+                  <p class="price">R$73.000</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="p-3">
-              <div class="card">
+        </div>
+        
+        <!-- Carro 3 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
                 <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202505/20250516/byd-dolphin-44.9-kw-eletrico-wmimagem15261281150.jpg?s=fill&w=552&h=414&q=60" class="card-img-top" alt="BYD Dolphin">
-                <div class="card-body">
-                  <h5 class="card-title">BYD Dolphin 2024 R$119.800</h5>
-                  <p class="card-text">44,9 KW ELÉTRICO</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">BYD Dolphin 2024</h5>
+                <p class="card-text">44,9 KW ELÉTRICO</p>
+                <div class="mt-auto">
+                  <p class="price">R$119.800</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="p-3">
-              <div class="card">
+        </div>
+        
+        <!-- Carro 4 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
                 <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202504/20250415/porsche-panamera-4.8-v8-turbo-gasolina-4p-automatico-wmimagem09424959585.jpg?s=fill&w=552&h=414&q=60" class="card-img-top" alt="Porsche Panamera">
-                <div class="card-body">
-                  <h5 class="card-title">Porsche Panamera 2011 R$280.000</h5>
-                  <p class="card-text">4.8 V8 TURBO GASOLINA 4P AUTOMÁTICO</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Porsche Panamera 2011</h5>
+                <p class="card-text">4.8 V8 TURBO GASOLINA 4P AUTOMÁTICO</p>
+                <div class="mt-auto">
+                  <p class="price">R$280.000</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="p-3">
-              <div class="card">
+        </div>
+        
+        <!-- Carro 5 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
                 <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202505/20250515/chevrolet-tracker-1.0-turbo-flex-ltz-automatico-wmimagem2224008063.jpg?s=fill&w=552&h=414&q=60" class="card-img-top" alt="Chevrolet Tracker">
-                <div class="card-body">
-                  <h5 class="card-title">Chevrolet Tracker 2022 R$97.500</h5>
-                  <p class="card-text">1.0 TURBO FLEX LTZ AUTOMÁTICO</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Chevrolet Tracker 2022</h5>
+                <p class="card-text">1.0 TURBO FLEX LTZ AUTOMÁTICO</p>
+                <div class="mt-auto">
+                  <p class="price">R$97.500</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="p-3">
-              <div class="card">
+        </div>
+        
+        <!-- Carro 6 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
                 <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202505/20250514/volkswagen-amarok-3-0-v6-tdi-diesel-highline-extreme-cd-4motion-automatico-wmimagem01022785911.webp?s=fill&w=552&h=414&q=60" class="card-img-top" alt="Volkswagen Amarok">
-                <div class="card-body">
-                  <h5 class="card-title">Volkswagen Amarok 2025 R$234.000</h5>
-                  <p class="card-text">3.0 V6 TDI DIESEL HIGHLINE EXTREME CD 4MOTION AUTOMÁTICO</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Volkswagen Amarok 2025</h5>
+                <p class="card-text">3.0 V6 TDI DIESEL HIGHLINE EXTREME CD 4MOTION AUTOMÁTICO</p>
+                <div class="mt-auto">
+                  <p class="price">R$234.000</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="p-3">
-              <div class="card">
+        </div>
+        
+        <!-- Carro 7 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
                 <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2024/202412/20241216/ferrari-f8-tributo-3.9-v8-turbo-gasolina-f1dct-wmimagem17124278686.jpg?s=fill&w=552&h=414&q=60" class="card-img-top" alt="Ferrari F8 Tributo">
-                <div class="card-body">
-                  <h5 class="card-title">Ferrari F8 Tributo 2024 R$4.199.990</h5>
-                  <p class="card-text">3.9 V8 TURBO GASOLINA F1-DCT</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Ferrari F8 Tributo 2024</h5>
+                <p class="card-text">3.9 V8 TURBO GASOLINA F1-DCT</p>
+                <div class="mt-auto">
+                  <p class="price">R$4.199.990</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="p-3">
-              <div class="card">
+        </div>
+        
+        <!-- Carro 8 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
                 <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202504/20250429/fiat-toro-2.0-16v-turbo-diesel-ranch-4wd-at9-wmimagem22480641489.jpg?s=fill&w=552&h=414&q=60" class="card-img-top" alt="Fiat Toro">
-                <div class="card-body">
-                  <h5 class="card-title">Fiat Toro 2022 R$128.950</h5>
-                  <p class="card-text">2.0 16V TURBO DIESEL RANCH 4WD AT9</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Fiat Toro 2022</h5>
+                <p class="card-text">2.0 16V TURBO DIESEL RANCH 4WD AT9</p>
+                <div class="mt-auto">
+                  <p class="price">R$128.950</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="p-3">
-              <div class="card">
+        </div>
+        
+        <!-- Carro 9 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
                 <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202501/20250115/cadillac-brougham-5-0-v8-gasolina-limousine-4p-automatico-wmimagem19164316137.webp?s=fill&w=552&h=414&q=60" class="card-img-top" alt="Cadillac Brougham">
-                <div class="card-body">
-                  <h5 class="card-title">CADILLAC BROUGHAM 1988 R$399.000</h5>
-                  <p class="card-text">5.0 V8 GASOLINA LIMOUSINE 4P AUTOMÁTICO</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">CADILLAC BROUGHAM 1988</h5>
+                <p class="card-text">5.0 V8 GASOLINA LIMOUSINE 4P AUTOMÁTICO</p>
+                <div class="mt-auto">
+                  <p class="price">R$399.000</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="p-3">
-              <div class="card">
+        </div>
+        
+        <!-- Carro 10 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
                 <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202505/20250521/hyundai-hb20s-1.0-tgdi-flex-comfort-plus-automatico-wmimagem09074507011.jpg?s=fill&w=552&h=414&q=60" class="card-img-top" alt="Hyundai HB20S">
-                <div class="card-body">
-                  <h5 class="card-title">HYUNDAI HB20S 2023 R$94.290</h5>
-                  <p class="card-text">1.0 TGDI FLEX COMFORT PLUS AUTOMÁTICO</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">HYUNDAI HB20S 2023</h5>
+                <p class="card-text">1.0 TGDI FLEX COMFORT PLUS AUTOMÁTICO</p>
+                <div class="mt-auto">
+                  <p class="price">R$94.290</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="p-3">
-              <div class="card">
+        </div>
+        
+        <!-- Carro 11 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
                 <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202505/20250521/honda-cb-1000r-wmimagem10565028792.jpg?s=fill&w=552&h=414&q=60" class="card-img-top" alt="Honda CB 1000R">
-                <div class="card-body">
-                  <h5 class="card-title">HONDA CB 1000R 2012</h5>
-                  <p class="card-text">R$46.990</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">HONDA CB 1000R 2012</h5>
+                <p class="card-text">Motor 1000cc</p>
+                <div class="mt-auto">
+                  <p class="price">R$46.990</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="p-3">
-              <div class="card">
+        </div>
+        
+        <!-- Carro 12 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
                 <img src="https://img.olx.com.br/images/83/839577640700738.webp" class="card-img-top" alt="Cavalo Alazão">
-                <div class="card-body">
-                  <h5 class="card-title">Cavalo Alazão Documentado</h5>
-                  <p class="card-text">R$6.000</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Cavalo Alazão Documentado</h5>
+                <p class="card-text">Animal treinado, bonito e saudável</p>
+                <div class="mt-auto">
+                  <p class="price">R$6.000</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="p-3">
-              <div class="card">
+        </div>
+        
+        <!-- Carro 13 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
                 <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202501/20250117/bmw-320i-2-0-16v-turbo-flex-m-sport-automatico-wmimagem12372912618.webp?s=fill&w=552&h=414&q=60" class="card-img-top" alt="BMW 320i">
-                <div class="card-body">
-                  <h5 class="card-title">BMW 320i 2023</h5>
-                  <p class="card-text">2.0 16V TURBO FLEX M SPORT AUTOMÁTICO</p>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">BMW 320i 2023</h5>
+                <p class="card-text">2.0 16V TURBO FLEX M SPORT AUTOMÁTICO</p>
+                <div class="mt-auto">
+                  <p class="price">R$289.900</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
             </div>
-         <div class="col">
-            <div class="p-3">
-              <div class="card">
-                <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202504/20250417/byd-song-plus-1-5-dmi-hibrido-automatico-wmimagem14301485920.webp?s=fill&w=552&h=414&q=60" class="card-img-top" alt="BMW 320i">
-                <div class="card-body">
-                  <h5 class="card-title">BYD SONG PLUS R$244.800</h5>
-                  <p class="card-text">1.5 DM-I HÍBRIDO AUTOMÁTICO</p>
+          </div>
+        </div>
+        
+        <!-- Carro 14 -->
+        <div class="col">
+          <div class="card-container">
+            <div class="card h-100">
+              <div class="card-img-container">
+                <img src="https://image.webmotors.com.br/_fotos/anunciousados/gigante/2025/202504/20250417/byd-song-plus-1-5-dmi-hibrido-automatico-wmimagem14301485920.webp?s=fill&w=552&h=414&q=60" class="card-img-top" alt="BYD Song Plus">
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">BYD SONG PLUS</h5>
+                <p class="card-text">1.5 DM-I HÍBRIDO AUTOMÁTICO</p>
+                <div class="mt-auto">
+                  <p class="price">R$244.800</p>
                   <a href="links.html" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
@@ -196,12 +605,14 @@
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <footer>
+  <footer>
+    <div class="container">
       <div class="footer-top">
         <a href="index.html">
-          <img src="assets/images/logo_nome.png" alt="logo empresa" />
+          <img src="assets/images/logo_nome.png" alt="logo empresa" width="200">
         </a>
         <div class="footer-content">
           <section class="botoes-links">
@@ -217,12 +628,12 @@
         </div>
       </div>
       <div class="footer_bottom">
-        <hr />
-        <p>&copy; FrontEnd - 2025</p>
+        <p>&copy; BarbaCar - 2025 | A sua revenda em Sobrado/PB</p>
         <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm">LGPD</a>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
 </html>
