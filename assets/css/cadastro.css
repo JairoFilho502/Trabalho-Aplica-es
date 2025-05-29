@@ -68,11 +68,14 @@ form input{
 }
 
 .cadastro_btn .btn_voltar{
-  background-color: red;
+  background-color: #fff;
+  color: red;
+  border: 1px solid red;
 }
 
 .cadastro_btn .btn_voltar:hover {
-  background-color: darkred;
+  background-color: rgb(172, 52, 52);
+  color: #fff;
 }
 
 .termos-container {
