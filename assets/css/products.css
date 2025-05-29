@@ -37,3 +37,20 @@ body {
     background-size: cover;
     color: white;
 }
+
+.carros img[alt="Nome do Produto 11"] {
+  width: 100%;
+  height: 135px;
+  object-fit: cover;
+  border-radius: 8px;  
+  object-position: center center;
+}
+
+.carros img[alt="Nome do Produto 13"] {
+  width: 100%;
+  height: 137px;
+  object-fit: cover;
+  border-radius: 8px;  
+  object-position: center center;
+}
+
