@@ -62,8 +62,10 @@
 }
 
 .more_car img {
+  width: 100%;
   max-width: 500px;
   border-radius: 5px;
+  height: auto;
 }
 
 .texto_botao {
@@ -128,4 +130,19 @@
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .more_car {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .more_car img {
+    max-width: 90%;
+  }
+
+  .texto_botao {
+    align-items: center;
+  }
 }
