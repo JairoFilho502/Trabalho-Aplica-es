@@ -61,16 +61,20 @@ form input{
     width: 100%;
     border: none;
     transition: background-color 0.3s;
+    box-shadow: 3px 3px 7px black;
+
 }
 
 .cadastro_btn button:hover{
     background-color: #0056b3;
+    box-shadow: none;
 }
 
 .cadastro_btn .btn_voltar{
   background-color: #fff;
   color: red;
   border: 1px solid red;
+  box-shadow: none;
 }
 
 .cadastro_btn .btn_voltar:hover {
