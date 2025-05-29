@@ -62,7 +62,6 @@ form input{
     border: none;
     transition: background-color 0.3s;
     box-shadow: 3px 3px 7px black;
-
 }
 
 .cadastro_btn button:hover{
